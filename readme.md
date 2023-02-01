@@ -1,4 +1,7 @@
-## URLs
+### Datev Status API Abfrage
+https://www.datev-status.de/
+
+## Aktuelle Wartungen und Störungen
 https://api.datev-status.de/v1/incidents  
   
 ```json
@@ -53,3 +56,79 @@ https://api.datev-status.de/v1/incidents
   }
 ]
 ```
+  
+## letzten drei Tage  
+https://api.datev-status.de/v1/incidents?last=3
+  
+```json
+[
+  {
+    "id": "63f8dfe6-66fe-4c4d-8a47-9c4d11acbbad",
+    "serviceInfoDto": {
+      "id": 200244,
+      "name": "DATEV Steuerkonto online"
+    },
+    "startDate": "2023-01-31T08:28:00+01:00",
+    "endDate": "2023-01-31T09:00:00+01:00",
+    "currentState": "AVAILABLE",
+    "worstState": "LIMITED",
+    "externalInfo": "Der Service steht derzeit eingeschränkt zur Verfügung.",
+    "createdAt": "2023-01-31T09:06:37.066587+01:00"
+  },
+  {
+    "id": "185753dc-8836-47ec-91fd-4bbd48a366ce",
+    "serviceInfoDto": {
+      "id": 101721,
+      "name": "Anmeldung mit DATEV SmartLogin"
+    },
+    "startDate": "2023-02-01T11:45:00+01:00",
+    "endDate": "2023-02-01T12:08:00+01:00",
+    "currentState": "AVAILABLE",
+    "worstState": "OUTAGE",
+    "externalInfo": "",
+    "createdAt": "2023-02-01T11:55:30.967396+01:00"
+  }
+]
+```
+  
+## externe Störungen
+https://api.datev-status.de/v1/incidents-external-systems
+  
+```json
+[
+  {
+    "id": "220a8e71-1f4e-45f1-b2d4-3194c922ce1f",
+    "title": "Störung bei Amazon",
+    "markdown": "Aufgrund eines technischen Fehlers bei Amazon kann es bei Nutzung des DATEV Zahlungsdatenservice für Amazon ab Ende Juli zu fehlenden Transaktionen und dadurch zu einer von DATEV erzeugten Ausgleichsposition kommen.\n\nAlle aktuell betroffenen Anwender wurden am 08.09.2022 mit einem Servicebrief informiert. Zusätzlich haben wir das Hilfe-Dokument 1022498 angepasst; dort ist ein Workaround für die manuelle Übernahme der fehlenden Umsätze beschrieben.\n\nWir sind in Klärung mit Amazon, um das Problem zu beheben."
+  },
+  {
+    "id": "6a39f922-73bd-4610-9563-69f2d6e9da6c",
+    "title": "Wartungen/Störungen bei der Finanzverwaltung",
+    "markdown": "Störungen/Wartungsmeldungen bei der Finanzverwaltung\n\nAktuell kommuniziert die Finanzverwaltung Störungen und/oder Wartungsmeldungen bei der Verfügbarkeit der ELSTER-Server.\n\nFür weitere Informationen besuchen Sie die Seite der Finanzverwaltung: Störungen bei der Verfügbarkeit der ELSTER-Server [www.elster.de/elsterweb/svs](https://www.elster.de/elsterweb/svs)"
+  }
+]
+
+```
+  
+## geplante Wartungsarbeiten
+https://api.datev-status.de/v1/maintenances
+  
+```json
+[
+  {
+    "ticketId": "C1045277",
+    "descriptionShort": "",
+    "descriptionLong": "",
+    "startDate": "2023-02-01T19:00:00+01:00",
+    "endDate": "2023-02-01T21:00:00+01:00",
+    "affectedServicesInfo": [
+      {
+        "id": 100788,
+        "name": "DATEV Lernplattform online"
+      }
+    ],
+    "lastEdit": "2023-02-01T21:00:00+01:00"
+  }
+]
+```
+  
